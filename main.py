@@ -48,10 +48,7 @@ while game_on:
                 text.color("black")
                 guessed = guessed + 1
 
-
-for state in states_list:
-    if state not in guessed_states:
-        not_guessed_states.append(state)
+not_guessed_states = [state for state in states_list if state not in guessed_states]
 
 pandas.DataFrame(not_guessed_states).to_csv("not_guessed_states.csv")
 
